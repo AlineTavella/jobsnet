@@ -1,0 +1,62 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "API do projeto Back end Jobs Net",
+    "description": "Essa é a API do projeto Back end Jobs Net",
+    "version": "0.0.1"
+  },
+
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "ambiente de desenvolvimento"
+    }
+  ],
+
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Inscrição de candidato",
+        "description": "Rota de cadastro de usuário, recebe: nome, genêro, email, cpf e cep",
+        "tags": ["candidato"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string"
+                  },
+                  "cpf": {
+                    "type": "string"
+                  },
+                  "cep": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "eu": {
+                  "value": {
+                    "name": "Aline Tavella",
+                    "gender": "Feminino Cis",
+                    "cpf": "548.205.878-62",
+                    "cep": "11111-111",
+                    "email": "aline@gmail.com"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
